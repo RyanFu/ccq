@@ -14,10 +14,10 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-package com.coldmn3.young.utils;
+package com.coldmn3.young.android;
 
 import android.app.Application;
-import android.provider.ContactsContract;
+import com.coldmn3.young.file.PropertyManager;
 
 /**
  * Application实现类<br>

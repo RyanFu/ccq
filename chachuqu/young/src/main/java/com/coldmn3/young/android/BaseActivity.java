@@ -14,9 +14,10 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-package com.coldmn3.ccq;
+package com.coldmn3.young.android;
 
-import com.coldmn3.young.android.BaseApplication;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 /**
  * 一句话功能简述<br>
@@ -24,7 +25,21 @@ import com.coldmn3.young.android.BaseApplication;
  *
  * @version 1.0
  * @author： session
- * @date：2013-9-4 下午4:24
+ * @date：2013-9-4 下午4:34
  */
-public class CCQApplication extends BaseApplication {
+public class BaseActivity extends FragmentActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // 添加Activity到堆栈
+        AppManager.getAppManager().addActivity(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 结束Activity&从堆栈中移除
+        AppManager.getAppManager().finishActivity(this);
+    }
 }

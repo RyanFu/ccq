@@ -17,6 +17,8 @@
 package com.coldmn3.young.utils;
 
 import android.util.Log;
+import com.coldmn3.young.android.BaseApplication;
+import com.coldmn3.young.file.PropertyManager;
 
 /**
  * 日志工具类,提供日志开关,级别,和日志定位功能<br>

@@ -14,10 +14,12 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-package com.coldmn3.young.utils;
+package com.coldmn3.young.file;
 
 import android.content.Context;
 import com.coldmn3.young.R;
+import com.coldmn3.young.utils.ULog;
+import com.coldmn3.young.utils.Util;
 
 import java.io.IOException;
 import java.io.InputStream;

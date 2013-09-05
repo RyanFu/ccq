@@ -16,15 +16,24 @@
 */
 package com.coldmn3.ccq;
 
-import com.coldmn3.young.android.BaseApplication;
-
 /**
- * 一句话功能简述<br>
- * 功能详细描述
+ * Intent帮助类
  *
  * @version 1.0
  * @author： session
- * @date：2013-9-4 下午4:24
+ * @date：2013-9-5 上午9:41
  */
-public class CCQApplication extends BaseApplication {
+public class Intents {
+
+    /**
+     * 创建的所以Intent的前缀
+     */
+    public static final String INTENT_PREFIX = "com.coldmn3.ccq.";
+
+    /**
+     * Intent中所以extra data的前缀
+     */
+    public static final String INTENT_EXTRA_PREFIX = INTENT_PREFIX + "extra.";
+
+
 }
