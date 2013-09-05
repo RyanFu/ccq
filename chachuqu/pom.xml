@@ -12,6 +12,7 @@
     <modules>
         <module>ccq</module>
         <module>young</module>
+        <module>umeng</module>
     </modules>
 
     <properties>

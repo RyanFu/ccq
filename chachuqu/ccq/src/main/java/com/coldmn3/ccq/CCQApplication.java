@@ -19,12 +19,12 @@ package com.coldmn3.ccq;
 import com.coldmn3.young.android.BaseApplication;
 
 /**
- * 一句话功能简述<br>
- * 功能详细描述
+ * CCQApplication
  *
  * @version 1.0
  * @author： session
  * @date：2013-9-4 下午4:24
  */
 public class CCQApplication extends BaseApplication {
+
 }
