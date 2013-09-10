@@ -3,6 +3,7 @@ package com.coldmn3.ccq;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import com.coldmn3.young.android.BaseActivity;
 import com.coldmn3.young.utils.ULog;
@@ -11,6 +12,10 @@ import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateResponse;
 
 public class SplashActivity extends CCQBaseActivity {
+
+    RefreshListView listView;
+    private String[] adapterData;
+
     /**
      * Called when the activity is first created.
      */
@@ -19,6 +24,17 @@ public class SplashActivity extends CCQBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         ULog.error("ULOG!@!@");
+        adapterData = new String[] { "Afghanistan", "Albania", "Algeria",
+                "American Samoa", "Andorra", "Angola", "Anguilla",
+                "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia",
+                "Aruba", "Australia", "Austria", "Azerbaijan", "Bahrain",
+                "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize",
+                "Benin", "Bermuda", "Bhutan", "Bolivia",
+                "Bosnia and Herzegovina", "Botswana", "Bouvet Island" };
+
+        listView = (RefreshListView) findViewById(R.id.infomation_tab_list);
+        listView.setAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, adapterData));
     }
 
     public void checkNew(View view) {

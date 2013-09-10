@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <!--normal colors-->
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="transparent">#00000000</color>
+    <!--app colors-->
+    <color name="nga_dark">#ff551200</color>
+    <color name="nga_shit_dark">#fffef3d1</color>
+    <color name="nga_shit_medium">#fffaf3d1</color>
+    <color name="nga_shit_light">#fffff8e5</color>
+    <color name="nga_grey">#ffaaaaaa</color>
+    <color name="nga_blue">#ff1d2a63</color>
+</resources>

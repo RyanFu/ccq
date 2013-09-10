@@ -31,6 +31,10 @@
             <version>1.0-SNAPSHOT</version>
             <type>apklib</type>
         </dependency>
+        <dependency>
+            <groupId>com.coldmn3.afinal</groupId>
+            <artifactId>afinal</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

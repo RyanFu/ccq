@@ -42,6 +42,11 @@
                 <artifactId>support-v4</artifactId>
                 <version>r18</version>
             </dependency>
+            <dependency>
+                <groupId>com.coldmn3.afinal</groupId>
+                <artifactId>afinal</artifactId>
+                <version>0.5</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
