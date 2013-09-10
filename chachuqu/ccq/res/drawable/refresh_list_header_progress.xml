@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/biantai_1" android:duration="900" />
+    <item android:drawable="@drawable/biantai_10" android:duration="100" />
+    <item android:drawable="@drawable/biantai_11" android:duration="100" />
+    <item android:drawable="@drawable/biantai_12" android:duration="100" />
+    <item android:drawable="@drawable/biantai_13" android:duration="100" />
+    <item android:drawable="@drawable/biantai_14" android:duration="100" />
+    <item android:drawable="@drawable/biantai_15" android:duration="100" />
+    <item android:drawable="@drawable/biantai_16" android:duration="100" />
+    <item android:drawable="@drawable/biantai_17" android:duration="100" />
+    <item android:drawable="@drawable/biantai_18" android:duration="600" />
+    <item android:drawable="@drawable/biantai_24" android:duration="100" />
+    <item android:drawable="@drawable/biantai_25" android:duration="100" />
+    <item android:drawable="@drawable/biantai_26" android:duration="200" />
+    <item android:drawable="@drawable/biantai_24" android:duration="100" />
+    <item android:drawable="@drawable/biantai_25" android:duration="100" />
+    <item android:drawable="@drawable/biantai_30" android:duration="300" />
+    <item android:drawable="@drawable/biantai_25" android:duration="100" />
+    <item android:drawable="@drawable/biantai_34" android:duration="300" />
+    <item android:drawable="@drawable/biantai_24" android:duration="100" />
+    <item android:drawable="@drawable/biantai_25" android:duration="100" />
+    <item android:drawable="@drawable/biantai_24" android:duration="100" />
+    <item android:drawable="@drawable/biantai_25" android:duration="100" />
+    <item android:drawable="@drawable/biantai_24" android:duration="100" />
+    <item android:drawable="@drawable/biantai_25" android:duration="100" />
+    <item android:drawable="@drawable/biantai_24" android:duration="100" />
+    <item android:drawable="@drawable/biantai_25" android:duration="100" />
+    <item android:drawable="@drawable/biantai_24" android:duration="100" />
+    <item android:drawable="@drawable/biantai_25" android:duration="100" />
+    <item android:drawable="@drawable/biantai_24" android:duration="100" />
+    <item android:drawable="@drawable/biantai_25" android:duration="100" />
+    <item android:drawable="@drawable/biantai_24" android:duration="100" />
+    <item android:drawable="@drawable/biantai_50" android:duration="900" />
+</animation-list>

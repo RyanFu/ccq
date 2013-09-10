@@ -1,9 +1,11 @@
 package com.coldmn3.ccq;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Toast;
 import com.coldmn3.young.android.BaseActivity;
 import com.coldmn3.young.utils.ULog;
@@ -15,6 +17,8 @@ public class SplashActivity extends CCQBaseActivity {
 
     RefreshListView listView;
     private String[] adapterData;
+    private ImageView refresh;
+    AnimationDrawable anim;
 
     /**
      * Called when the activity is first created.
@@ -23,6 +27,16 @@ public class SplashActivity extends CCQBaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        refresh = (ImageView) findViewById(R.id.imageView);
+        refresh.setBackgroundResource(R.drawable.refresh_list_header_progress);
+        anim = (AnimationDrawable) refresh.getBackground();
+        refresh.post(new Runnable() {
+            @Override
+            public void run() {
+                anim.start();
+            }
+        });
+
         ULog.error("ULOG!@!@");
         adapterData = new String[] { "Afghanistan", "Albania", "Algeria",
                 "American Samoa", "Andorra", "Angola", "Anguilla",
