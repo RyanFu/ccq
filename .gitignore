@@ -16,7 +16,7 @@ target
 pom.xml.*
 release.properties
 
-# IntelliJ
+# IntelliJ IDEA
 .idea
 *.iml
 *.iws
