@@ -5,10 +5,13 @@
     <color name="black">#ff000000</color>
     <color name="transparent">#00000000</color>
     <!--app colors-->
-    <color name="nga_dark">#ff551200</color>
-    <color name="nga_shit_dark">#fffef3d1</color>
-    <color name="nga_shit_medium">#fffaf3d1</color>
-    <color name="nga_shit_light">#fffff8e5</color>
-    <color name="nga_grey">#ffaaaaaa</color>
-    <color name="nga_blue">#ff1d2a63</color>
+    <color name="nga_dark">#551200</color>
+    <color name="nga_dark_f">#713828</color>
+    <color name="nga_shit_1">#fff8e5</color>
+    <color name="nga_shit_2">#fef3d1</color>
+    <color name="nga_silver">#aaaaaa</color>
+    <color name="nga_blue">#1d2a63</color>
+    <color name="nga_shit">#aa7700</color><!--新帖字样颜色 -->
+    <color name="nga_background">#ffffee</color><!-- 全局背景色 -->
+
 </resources>

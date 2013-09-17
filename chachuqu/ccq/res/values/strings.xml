@@ -3,10 +3,18 @@
     <string name="app_name">叉出去</string>
 
     <string name="app_list_header_refresh_down">下拉刷新</string>
-    <string name="app_list_header_refreshing">正在刷新</string>
+    <string name="app_list_header_refreshing">钱包偷取中</string>
     <string name="app_list_header_refresh_up">松开刷新</string>
     <string name="app_list_header_refresh_last_update">上次更新于:%s</string>
     <string name="app_list_footer_more">更多</string>
-    <string name="app_list_footer_loading">正在加载</string>
+    <string name="app_list_footer_loading">钱包偷取中</string>
+
+    <!-- 登录-->
+    <string name="login_title">登录</string>
+    <string name="login_name_hint">用户名</string>
+    <string name="login_password_hint">密码</string>
+    <string name="login_submit">登录</string>
+    <string name="login_name_empty">用户名不能为空</string>
+    <string name="login_password_empty">密码不能为空</string>
 
 </resources>

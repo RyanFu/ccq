@@ -14,7 +14,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-package com.coldmn3.ccq.ui;
+package com.coldmn3.ccq.ui.topiclist;
 
 /**
  * 话题列表Entity
@@ -25,15 +25,17 @@ package com.coldmn3.ccq.ui;
  */
 public class TopicListEntity {
 
-    private String tid;
-
     private String fid;
-
-    private String quote_from;
 
     private String titlefont;
 
     private String author;
 
     private String subject; // 标题
+
+    private String postdate;
+
+    private String replies;
+
+    private String tpcurl;
 }

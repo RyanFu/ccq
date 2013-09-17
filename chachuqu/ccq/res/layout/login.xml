@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nga_background">
+
+    <RelativeLayout
+        android:id="@+id/login_title_bar"
+        style="@style/actionbar">
+
+        <ImageView
+            android:id="@+id/actionbar_btn_back"
+            style="@style/actionbar_btn_back" />
+
+        <TextView
+            style="@style/actionbar_text_center"
+            android:text="@string/login_title" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/login_input_name"
+        style="@style/ccq_exittext.login"
+        android:layout_below="@id/login_title_bar"
+        android:hint="@string/login_name_hint"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/login_input_password"
+        style="@style/ccq_exittext.login"
+        android:inputType="textPassword"
+        android:layout_below="@id/login_input_name"
+        android:hint="@string/login_password_hint" />
+
+    <Button
+        android:id="@+id/login_submit"
+        style="@style/ccq_submit_btn"
+        android:layout_width="120dp"
+        android:text="@string/login_submit"
+        android:layout_below="@id/login_input_password"
+        android:layout_alignRight="@id/login_input_password"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

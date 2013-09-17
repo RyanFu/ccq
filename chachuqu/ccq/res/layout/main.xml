@@ -28,7 +28,6 @@
     <com.coldmn3.ccq.RefreshListView
         android:id="@+id/infomation_tab_list"
         style="@style/ccq_list"
-        android:background="@color/nga_shit_dark"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 </LinearLayout>

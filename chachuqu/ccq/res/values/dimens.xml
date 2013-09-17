@@ -3,4 +3,10 @@
     <dimen name="bottom_indicator_height">42dp</dimen>
     <dimen name="refresh_list_header_img_w">60dp</dimen>
     <dimen name="refresh_list_header_img_h">60dp</dimen>
+    <dimen name="action_bar_height">44.0dp</dimen>
+    <dimen name="back_btn_width">54.0dp</dimen>
+    <dimen name="login_input_height">44dp</dimen>
+    <dimen name="app_text_medium">18sp</dimen>
+    <dimen name="app_text_small">15sp</dimen>
+    <dimen name="app_btn_height">44dp</dimen>
 </resources>

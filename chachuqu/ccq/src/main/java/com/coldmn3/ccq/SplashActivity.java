@@ -1,5 +1,6 @@
 package com.coldmn3.ccq;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Toast;
+import com.coldmn3.ccq.ui.login.LoginActivity;
 import com.coldmn3.young.utils.ULog;
 import com.umeng.update.UmengUpdateAgent;
 import com.umeng.update.UmengUpdateListener;
@@ -59,6 +61,8 @@ public class SplashActivity extends CCQBaseActivity {
         UmengUpdateAgent.setUpdateListener(updateListener);
 
         UmengUpdateAgent.update(this);
+
+        startActivity(new Intent(this, LoginActivity.class));
     }
 
     UmengUpdateListener updateListener = new UmengUpdateListener() {

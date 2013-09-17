@@ -14,7 +14,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-package com.coldmn3.ccq.ui;
+package com.coldmn3.ccq.ui.topiclist;
 
 import android.os.Bundle;
 import com.coldmn3.ccq.R;

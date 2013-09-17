@@ -17,7 +17,8 @@
     <application
         android:label="@string/app_name"
         android:icon="@drawable/ic_launcher"
-        android:name=".CCQApplication">
+        android:name=".CCQApplication"
+        android:theme="@style/Theme.CCQ">
         <!-- {UMeng -->
         <meta-data
             android:name="UMENG_APPKEY"
@@ -41,6 +42,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.TopicListActivity" />
+        <activity android:name=".ui.topiclist.TopicListActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
     </application>
 </manifest>

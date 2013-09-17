@@ -14,13 +14,16 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-package com.coldmn3.ccq.ui;
+package com.coldmn3.ccq.ui.topiclist;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 import com.coldmn3.young.android.YBaseAdapter;
+
+import java.util.List;
 
 /**
  * 一句话功能简述<br>
@@ -32,13 +35,20 @@ import com.coldmn3.young.android.YBaseAdapter;
  */
 public class TopicListAdapter extends YBaseAdapter {
 
-    public TopicListAdapter(Context context) {
+    private List<TopicListEntity> mData;
+
+    public final class ViewHolder {
+        public TextView subject;
+    }
+
+    public TopicListAdapter(Context context, List<TopicListEntity> data) {
         super(context);
+        this.mData = data;
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return mData.size();
     }
 
     @Override
@@ -53,6 +63,6 @@ public class TopicListAdapter extends YBaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        return convertView;
     }
 }
