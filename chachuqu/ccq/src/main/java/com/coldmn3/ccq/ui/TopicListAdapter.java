@@ -16,9 +16,11 @@
 */
 package com.coldmn3.ccq.ui;
 
-import android.os.Bundle;
-import com.coldmn3.ccq.R;
-import com.coldmn3.young.android.YBaseActivity;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import com.coldmn3.young.android.YBaseAdapter;
 
 /**
  * 一句话功能简述<br>
@@ -26,11 +28,31 @@ import com.coldmn3.young.android.YBaseActivity;
  *
  * @version 1.0
  * @author： session
- * @date：2013-9-8 上午1:22
+ * @date：2013-9-16 下午5:27
  */
-public class TopicListActivity extends YBaseActivity {
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.topic_list);
+public class TopicListAdapter extends YBaseAdapter {
+
+    public TopicListAdapter(Context context) {
+        super(context);
+    }
+
+    @Override
+    public int getCount() {
+        return 0;
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        return null;
     }
 }

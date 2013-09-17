@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/biantai_1" android:duration="100" />
+    <item android:drawable="@drawable/biantai_18" android:duration="200" />
+    <item android:drawable="@drawable/biantai_26" android:duration="200" />
+    <item android:drawable="@drawable/biantai_30" android:duration="200" />
+    <item android:drawable="@drawable/biantai_34" android:duration="200" />
+</animation-list>

@@ -1,13 +1,13 @@
 package com.coldmn3.ccq;
 
 import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.AbsListView.OnScrollListener;
 
@@ -38,15 +38,16 @@ public class RefreshListView extends ListView implements OnScrollListener {
     private final static int REFRESH_RETURN = 2;       //没有达到刷新界限，返回
     private final static int REFRESH_DONE = 3;         //加载数据结束
 
-    private LinearLayout mHeaderLinearLayout = null;
+    private RelativeLayout mHeaderLinearLayout = null;
     private LinearLayout mFooterLinearLayout = null;
     private TextView mHeaderTextView = null;
     private TextView mHeaderUpdateText = null;
     private ImageView mHeaderPullDownImageView = null;
     private ImageView mHeaderReleaseDownImageView = null;
-    private ProgressBar mHeaderProgressBar = null;
+    private ImageView mHeaderProgress = null;
     private TextView mFooterTextView = null;
     private ProgressBar mFooterProgressBar = null;
+    AnimationDrawable anim = null;
 
     private SimpleDateFormat mSimpleDateFormat;
 
@@ -66,13 +67,14 @@ public class RefreshListView extends ListView implements OnScrollListener {
     }
 
     void init(final Context context) {
-        mHeaderLinearLayout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.refresh_list_header, null);
+        mHeaderLinearLayout = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.refresh_list_header, null);
         addHeaderView(mHeaderLinearLayout);
         mHeaderTextView = (TextView) findViewById(R.id.refresh_list_header_text);
         mHeaderUpdateText = (TextView) findViewById(R.id.refresh_list_header_last_update);
         mHeaderPullDownImageView = (ImageView) findViewById(R.id.refresh_list_header_pull_down);
         mHeaderReleaseDownImageView = (ImageView) findViewById(R.id.refresh_list_header_release_up);
-        mHeaderProgressBar = (ProgressBar) findViewById(R.id.refresh_list_header_progressbar);
+        mHeaderProgress = (ImageView) findViewById(R.id.refresh_list_header_progress);
+        anim = (AnimationDrawable) mHeaderProgress.getBackground();
 
         mFooterLinearLayout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.refresh_list_footer, null);
         addFooterView(mFooterLinearLayout);
@@ -194,23 +196,24 @@ public class RefreshListView extends ListView implements OnScrollListener {
     }
 
     private void measureView(View child) {
-        ViewGroup.LayoutParams p = child.getLayoutParams();
-        if (p == null) {
-            p = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT);
-        }
-
-        int childWidthSpec = ViewGroup.getChildMeasureSpec(0, 0 + 0, p.width);
-        int lpHeight = p.height;
-        int childHeightSpec;
-        if (lpHeight > 0) {
-            childHeightSpec = MeasureSpec.makeMeasureSpec(lpHeight,
-                    MeasureSpec.EXACTLY);
-        } else {
-            childHeightSpec = MeasureSpec.makeMeasureSpec(0,
-                    MeasureSpec.UNSPECIFIED);
-        }
-        child.measure(childWidthSpec, childHeightSpec);
+//        ViewGroup.LayoutParams p = child.getLayoutParams();
+//        if (p == null) {
+//            p = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,
+//                    ViewGroup.LayoutParams.WRAP_CONTENT);
+//        }
+//
+//        int childWidthSpec = ViewGroup.getChildMeasureSpec(0, 0 + 0, p.width);
+//        int lpHeight = p.height;
+//        int childHeightSpec;
+//        if (lpHeight > 0) {
+//            childHeightSpec = MeasureSpec.makeMeasureSpec(lpHeight,
+//                    MeasureSpec.EXACTLY);
+//        } else {
+//            childHeightSpec = MeasureSpec.makeMeasureSpec(0,
+//                    MeasureSpec.UNSPECIFIED);
+//        }
+        child.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+        child.measure(0, 0);
     }
 
     private Handler mHandler = new Handler(){
@@ -225,14 +228,29 @@ public class RefreshListView extends ListView implements OnScrollListener {
                 break;
             case REFRESH_BACED:
                 mHeaderTextView.setText("正在加载...");
-                mHeaderProgressBar.setVisibility(View.VISIBLE);
+                mHeaderProgress.setVisibility(View.VISIBLE);
+                mHeaderProgress.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        anim.start();
+                    }
+                });
+
                 mHeaderPullDownImageView.setVisibility(View.GONE);
                 mHeaderReleaseDownImageView.setVisibility(View.GONE);
                 mPullRefreshState = EXIT_PULL_REFRESH;
+
+
                 new Thread() {
                     public void run() {
+
                         if (mRefreshListener != null) {
                             mRefreshObject = mRefreshListener.refreshing();
+                        }
+                        try {
+                            Thread.sleep(5000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
                         }
                         Message msg = mHandler.obtainMessage();
                         msg.what = REFRESH_DONE;
@@ -242,7 +260,7 @@ public class RefreshListView extends ListView implements OnScrollListener {
                 break;
             case REFRESH_RETURN:
                 mHeaderTextView.setText("下拉刷新");
-                mHeaderProgressBar.setVisibility(View.INVISIBLE);
+                mHeaderProgress.setVisibility(View.INVISIBLE);
                 mHeaderPullDownImageView.setVisibility(View.VISIBLE);
                 mHeaderReleaseDownImageView.setVisibility(View.GONE);
                 mHeaderLinearLayout.setPadding(mHeaderLinearLayout.getPaddingLeft(),
@@ -254,7 +272,14 @@ public class RefreshListView extends ListView implements OnScrollListener {
                 break;
             case REFRESH_DONE:
                 mHeaderTextView.setText("下拉刷新");
-                mHeaderProgressBar.setVisibility(View.INVISIBLE);
+                mHeaderProgress.setVisibility(View.INVISIBLE);
+                mHeaderProgress.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        anim.stop();
+                    }
+                });
+
                 mHeaderPullDownImageView.setVisibility(View.VISIBLE);
                 mHeaderReleaseDownImageView.setVisibility(View.GONE);
                 mHeaderUpdateText.setText(getContext().getString(R.string.app_list_header_refresh_last_update, mSimpleDateFormat.format(new Date())));

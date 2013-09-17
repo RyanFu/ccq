@@ -14,11 +14,10 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-package com.coldmn3.ccq.ui;
+package com.coldmn3.young.android;
 
 import android.os.Bundle;
-import com.coldmn3.ccq.R;
-import com.coldmn3.young.android.YBaseActivity;
+import android.support.v4.app.FragmentActivity;
 
 /**
  * 一句话功能简述<br>
@@ -26,11 +25,21 @@ import com.coldmn3.young.android.YBaseActivity;
  *
  * @version 1.0
  * @author： session
- * @date：2013-9-8 上午1:22
+ * @date：2013-9-4 下午4:34
  */
-public class TopicListActivity extends YBaseActivity {
-    public void onCreate(Bundle savedInstanceState) {
+public class YBaseActivity extends FragmentActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.topic_list);
+        // 添加Activity到堆栈
+        AppManager.getAppManager().addActivity(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 结束Activity&从堆栈中移除
+        AppManager.getAppManager().finishActivity(this);
     }
 }

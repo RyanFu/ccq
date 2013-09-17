@@ -14,32 +14,26 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-package com.coldmn3.young.android;
-
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+package com.coldmn3.ccq.ui;
 
 /**
- * 一句话功能简述<br>
- * 功能详细描述
+ * 话题列表Entity
  *
  * @version 1.0
  * @author： session
- * @date：2013-9-4 下午4:34
+ * @date：2013-9-16 下午5:54
  */
-public class BaseActivity extends FragmentActivity {
+public class TopicListEntity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // 添加Activity到堆栈
-        AppManager.getAppManager().addActivity(this);
-    }
+    private String tid;
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // 结束Activity&从堆栈中移除
-        AppManager.getAppManager().finishActivity(this);
-    }
+    private String fid;
+
+    private String quote_from;
+
+    private String titlefont;
+
+    private String author;
+
+    private String subject; // 标题
 }

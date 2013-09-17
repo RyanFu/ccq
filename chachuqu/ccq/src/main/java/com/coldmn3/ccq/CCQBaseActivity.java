@@ -16,8 +16,7 @@
 */
 package com.coldmn3.ccq;
 
-import android.os.Bundle;
-import com.coldmn3.young.android.BaseActivity;
+import com.coldmn3.young.android.YBaseActivity;
 import com.umeng.analytics.MobclickAgent;
 
 /**
@@ -28,7 +27,7 @@ import com.umeng.analytics.MobclickAgent;
  * @author： session
  * @date：2013-9-5 下午2:25
  */
-public class CCQBaseActivity extends BaseActivity {
+public class CCQBaseActivity extends YBaseActivity {
 
     @Override
     protected void onResume() {

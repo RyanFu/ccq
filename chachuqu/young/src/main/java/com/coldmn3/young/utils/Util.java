@@ -18,6 +18,7 @@ package com.coldmn3.young.utils;
 
 import java.io.Closeable;
 import java.io.IOException;
+import java.util.Date;
 
 /**
  * 项目工具类<br>
@@ -28,6 +29,17 @@ import java.io.IOException;
  * @date：2013-9-4 下午4:09
  */
 public class Util {
+
+    public static String toFriendlyTime(Date time) {
+        if (time == null) {
+            return "unknow";
+        }
+        int timeSpan = (int) ((System.currentTimeMillis() - time.getTime()) / 1000);
+        if (timeSpan < 3600) {
+            return "";
+        }
+        return "";
+    }
 
     public static void closeStream(Closeable stream) {
         if (stream != null) {

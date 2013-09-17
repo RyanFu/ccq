@@ -16,34 +16,25 @@
 */
 package com.coldmn3.young.android;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 
 /**
- * Fragment 基础类
+ * 基础adapter
  *
  * @version 1.0
  * @author： session
- * @date：2013-9-4 下午4:38
+ * @date：2013-9-16 下午5:44
  */
-public class BaseFragment extends Fragment {
+public abstract class YBaseAdapter extends BaseAdapter {
 
-    public LayoutInflater mInflater;
-    public Activity mActivity;
+    Context mContext;
+    LayoutInflater mInflater;
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        mActivity = activity;
+    public YBaseAdapter(Context context) {
+        mContext = context;
+        mInflater = LayoutInflater.from(context);
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mInflater = inflater;
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }
 }

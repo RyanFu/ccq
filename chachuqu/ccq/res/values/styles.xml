@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <style name="refresh_list_header_img">
+        <item name="android:layout_width">@dimen/refresh_list_header_img_w</item>
+        <item name="android:layout_height">@dimen/refresh_list_header_img_h</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="ccq_list">
+    <item name="android:cacheColorHint">@color/transparent</item>
+    </style>
+</resources>

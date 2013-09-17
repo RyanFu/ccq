@@ -27,7 +27,7 @@ import com.coldmn3.young.file.PropertyManager;
  * @author： session
  * @date：2013-9-4 下午3:35
  */
-public class BaseApplication extends Application {
+public class YBaseApplication extends Application {
 
     public static String PACKAGE_NAME;
 

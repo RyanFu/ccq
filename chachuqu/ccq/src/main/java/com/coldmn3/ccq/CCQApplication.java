@@ -16,7 +16,7 @@
 */
 package com.coldmn3.ccq;
 
-import com.coldmn3.young.android.BaseApplication;
+import com.coldmn3.young.android.YBaseApplication;
 
 /**
  * CCQApplication
@@ -25,6 +25,6 @@ import com.coldmn3.young.android.BaseApplication;
  * @author： session
  * @date：2013-9-4 下午4:24
  */
-public class CCQApplication extends BaseApplication {
+public class CCQApplication extends YBaseApplication {
 
 }

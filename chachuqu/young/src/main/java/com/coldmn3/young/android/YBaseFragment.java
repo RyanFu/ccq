@@ -14,23 +14,36 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-package com.coldmn3.ccq.ui;
+package com.coldmn3.young.android;
 
+import android.app.Activity;
 import android.os.Bundle;
-import com.coldmn3.ccq.R;
-import com.coldmn3.young.android.YBaseActivity;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 /**
- * 一句话功能简述<br>
- * 功能详细描述
+ * Fragment 基础类
  *
  * @version 1.0
  * @author： session
- * @date：2013-9-8 上午1:22
+ * @date：2013-9-4 下午4:38
  */
-public class TopicListActivity extends YBaseActivity {
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.topic_list);
+public class YBaseFragment extends Fragment {
+
+    public LayoutInflater mInflater;
+    public Activity mActivity;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mActivity = activity;
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mInflater = inflater;
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 }

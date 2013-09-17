@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="bottom_indicator_height">42dp</dimen>
-
+    <dimen name="refresh_list_header_img_w">60dp</dimen>
+    <dimen name="refresh_list_header_img_h">60dp</dimen>
 </resources>

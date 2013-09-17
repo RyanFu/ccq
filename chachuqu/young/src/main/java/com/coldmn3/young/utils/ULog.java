@@ -17,7 +17,7 @@
 package com.coldmn3.young.utils;
 
 import android.util.Log;
-import com.coldmn3.young.android.BaseApplication;
+import com.coldmn3.young.android.YBaseApplication;
 import com.coldmn3.young.file.PropertyManager;
 
 /**
@@ -47,7 +47,7 @@ public class ULog {
             StackTraceElement[] els = e.getStackTrace();
 
             for (int i = 0, l = els.length; i < l; i++) {
-                if (els[i].getClassName().startsWith(BaseApplication.PACKAGE_NAME)
+                if (els[i].getClassName().startsWith(YBaseApplication.PACKAGE_NAME)
                         && !els[i].getClassName().equals(ULog.class.getName())) {
                     String logDetails = els[i].getFileName() + "->" + els[i].getMethodName() + ":" + els[i].getLineNumber()
                             + " ";
